@@ -13,14 +13,22 @@ A shell is the system the operating system uses to interpret text commands.  Bas
 I believe the most important commands are the commands for navigating between files and folders and creating and removing files and directories.  Even knowing these few commands, I already have saved a lot of time navigating my files in the terminal instead of the GUI.
 
 > pwd - print working directory - displays the current folder you are navigating in
+
 > ls - lists file contents of the current folder (ls -l lists details and ls -a displays all hidden files)
-> mv - used to move or rename a file or directory
+
+
 > cd - change directory - specify a folder in the current directory to navigate to that folder
+
 > ../ - navigates up to the parent directory
+
 > touch - creates a new file (touch filename.extension)
+
 > mkdir - creates a new folder (mkdir folder)
+
 > less - a program to read text files, divides content into pages for easier reading and navigation
+
 > rmdir - removes a directory (rm -r path/to/directory removes all sub-directories)
+
 > help - displays a list of available commands
 
 # 1.4 Forking and Cloning Reflection
