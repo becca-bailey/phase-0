@@ -34,7 +34,7 @@ HEAD^ will return to the most recent commit.  You can use "git reset --soft HEAD
 
 **git add** - adds untracked files to the commit
 
-**git commit -m "commit message" - commits files
+**git commit -m "commit message"** - commits files
 
 **git commit -v** - commits files and opens text editor for detailed message
 
