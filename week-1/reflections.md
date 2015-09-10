@@ -12,42 +12,42 @@ A shell is the system the operating system uses to interpret text commands.  Bas
 
 I believe the most important commands are the commands for navigating between files and folders and creating and removing files and directories.  Even knowing these few commands, I already have saved a lot of time navigating my files in the terminal instead of the GUI.
 
-> pwd - print working directory - displays the current folder you are navigating in
+**pwd** - print working directory - displays the current folder you are navigating in
 
-> ls - lists file contents of the current folder (ls -l lists details and ls -a displays all hidden files)
+**ls** - lists file contents of the current folder (ls -l lists details and ls -a displays all hidden files)
 
 
-> cd - change directory - specify a folder in the current directory to navigate to that folder
+**cd** - change directory - specify a folder in the current directory to navigate to that folder
 
-> ../ - navigates up to the parent directory
+**../** - navigates up to the parent directory
 
-> touch - creates a new file (touch filename.extension)
+**touch** - creates a new file (touch filename.extension)
 
-> mkdir - creates a new folder (mkdir folder)
+**mkdir** - creates a new folder (mkdir folder)
 
-> less - a program to read text files, divides content into pages for easier reading and navigation
+**less** - a program to read text files, divides content into pages for easier reading and navigation
 
-> rmdir - removes a directory (rm -r path/to/directory removes all sub-directories)
+**rmdir** - removes a directory (rm -r path/to/directory removes all sub-directories)
 
-> help - displays a list of available commands
+**help** - displays a list of available commands
 
 # 1.4 Forking and Cloning Reflection
 
 To back up files on your machine using git version control, you only need a few simple commands.  First, you need to navigate to the folder you would like to save using cd ___ in bash.  This folder can contain text, code, or even image files (though it probably shouldn’t be your home folder, or any folder that contains a large quantity of files and programs.)  Once inside the folder, here are the commands you use.
 
-> git init - This turns your folder into a git repository
+**git init** - This turns your folder into a git repository
 
-> git status - This checks the status of your tracked and untracked files
+**git status** - This checks the status of your tracked and untracked files
 
-> git add . - This adds all of your untracked files to the git repository, or you can instead add individual file names if you don’t want to track everything.
+**git add .** - This adds all of your untracked files to the git repository, or you can instead add individual file names if you don’t want to track everything.
 
-> git commit -m “first commit” - This command commits all the added files to the git repository.  You need to add a commit message, which usually describes the changes made to the files.
+**git commit -m “commit message”** - This command commits all the added files to the git repository.  You need to add a commit message, which usually describes the changes made to the files.
 
 To fork a repository, you need to find the repository in GitHub and click “fork” in the upper right-hand corner.  This will copy the entire repository into a new repository associated with your account.  Once you have your own repository, copy and paste the clone link on the right hand side, and use these commands.
 
-> Navigate to the folder where you want to store the repository.
+Navigate to the folder where you want to store the repository.
 
-> git clone ________ (link from forked repository)
+**git clone ________** (link from forked repository)
 
 Once you have cloned the repository, you can make any changes on your computer and then push the changes to your own repository using git push.  You will not be able to change the original repository unless you are a collaborator.
 
