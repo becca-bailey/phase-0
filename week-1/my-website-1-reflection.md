@@ -22,7 +22,11 @@ If code is open source, the code is visible to the public, and it is free for ot
 
 **What do you think about Open Source?  Does it make you nervous or protective?  Does it feel like utopia?**
 
+<<<<<<< HEAD
 A little of both.  I know that code does not have to be open source, so if I am working on code I would prefer not to distribute to hte public, I am free to copyright it and make the files private.  I do love that so much code is open source, though, because it means that as a developer, you can build on the work of other developers without having to re-invent everything yourself.  For all the projects I've worked on thus far, I have no problem with others using my code or making it better.
+
+A little of both.  I know that code does not have to be open source, so if I am working on code I would prefer not to distribute to the public, I am free to copyright it and make the files private.  I do love that so much code is open source, though, because it means that as a developer, you can build on the work of other developers without having to re-invent everything yourself.  For all the projects I've worked on thus far, I have no problem with others using my code or making it better.
+
 
 **Assess the importance of using licenses.**
 
