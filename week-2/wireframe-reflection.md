@@ -1,4 +1,4 @@
-![Wireframe](imgs/Wireframe.png "Wireframe")
+![Wireframe](imgs/Wireframe.001.jpg "Wireframe")
 
 **What is a wireframe?**
 
