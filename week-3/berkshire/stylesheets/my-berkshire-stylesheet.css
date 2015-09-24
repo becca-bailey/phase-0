@@ -76,7 +76,19 @@ li {
 	margin-bottom: 15px;
 }
 
-/* CSS Comment */
+/* 
+
+What is important to know when linking an external file (like a stylesheet) to an HTML file?
+
+It's important to know the location of the stylesheet in the directory, and also to pay attention to the order of stylesheets if you are using more than one.  If more than one stylesheet styles the same element, the styles closest to the bottom will take precidence.  
+
+What tricks did you use to help you with positioning?  How hard was it to get the site as you wanted it?
+
+This particular site didn't have any tricky positioning other than the list items that were divided into two columns.  It wasn't particularly difficult to get the position to match the example site, but my pair and I did discuss some best practices for positioning a new site, such as using a consistent layout and margins, and making the positining flexible to allow for new information.
+
+What CSS di dyou use to modify the element style (like size, color, etc.)
+
+
 
 
 
