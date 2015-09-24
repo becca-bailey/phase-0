@@ -1,0 +1,82 @@
+/* Header Styles */
+
+body {
+	color: #122376;
+	padding-bottom: 10px;
+}
+
+header {
+	text-align: center;
+}
+
+header h1 {
+	text-transform: uppercase;
+	font-size: 1.2em;
+	margin: 0;
+	padding: 0;
+}
+
+header h3 {
+	margin-bottom: 10px;
+}
+
+h3, h4 {
+	margin: 0;
+	padding: 0;
+}
+
+.first-letter {
+	font-size: 1.8em;
+}
+
+.smaller {
+	font-size: .7em;
+}
+
+/* Body Styles */
+
+#left {
+	float: left;
+	width: 50%;
+}
+
+#right {
+	float: right;
+	width: 50%;
+}
+
+main {
+	margin: 0 5%;
+}
+
+#geico {
+	clear: both;
+	text-align: center;
+	margin: 1.2em  0;
+}
+
+hr {
+	clear: both;
+}
+
+small {
+	display: block;
+	font-size: .6em;
+}
+
+li {
+	margin: 2em 0;
+}
+
+.bottom-text {
+	font-size: .82em;
+}
+
+#legal {
+	margin-bottom: 15px;
+}
+
+/* CSS Comment */
+
+
+
