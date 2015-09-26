@@ -1,13 +1,24 @@
 /* Header Styles */
 
 body {
-	color: #122376;
+	color: #000080;
 	padding-bottom: 10px;
+	background-color: #ffffff;
+}
+
+a { 
+	color: #800080;
+}
+
+a:visited {
+	color: #ff0000;
 }
 
 header {
 	text-align: center;
 }
+
+/* Typography */
 
 header h1 {
 	text-transform: uppercase;
@@ -86,9 +97,16 @@ What tricks did you use to help you with positioning?  How hard was it to get th
 
 This particular site didn't have any tricky positioning other than the list items that were divided into two columns.  It wasn't particularly difficult to get the position to match the example site, but my pair and I did discuss some best practices for positioning a new site, such as using a consistent layout and margins, and making the positining flexible to allow for new information.
 
-What CSS di dyou use to modify the element style (like size, color, etc.)
+What CSS did you use to modify the element style (like size, color, etc.)
 
+Though the CSS was pretty minimal, my pair and I used color, text-align, float (to separate the two columns), margin, and a few other CSS styles.
 
+Did you modify the HTML to include classes or ids?  If so, which did you choose and why?  If you didn't, how would you know which one to add to your HTML?
 
+We used both classes and ID's in our HTML--some which I had included from the last paring session, and some which we added when we added the CSS.  We used classes when we were trying to target only one element on the page (which happens more often in single-page websites like this one) and classes to target multiple elements.  For example, we used an ID to target the geico section (since there's only one) and a class called .smaller to target all the smaller text (other than the text we targeted with a more semantic <small> tag.) 
 
+When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?  
 
+In the style of older HTML pages, this page used inline CSS instead of a stylesheet, which is no longer considered best practice.  The site also uses numeric font sizes instead of pixels or ems, which I have never seen before.  There are also some things we just did differently, such as creating a two-column layout using float: left and float: right instead of a table.  There are advantages and disadvantages to both methods, but I think the method we chose is a simpler way to do it.  Though the styles in the original site may have been best practice at the time, I think the code we created is more up-to-date and in line with HTML5 standards.  
+
+*/
