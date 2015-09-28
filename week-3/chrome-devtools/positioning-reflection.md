@@ -1,3 +1,41 @@
+1.  
+
+![3-1](imgs/3-1.png)
+
+2.  
+
+![3-2](imgs/3-2.png)
+
+3.
+
+![3-3](imgs/3-3.png)
+
+4.
+
+![3-4](imgs/3-4.png)
+
+5.
+
+![3-5](imgs/3-5.png)
+
+6.
+
+![3-6](imgs/3-6.png)
+
+7.
+
+![3-7](imgs/3-7.png)
+
+8.
+
+![3-8](imgs/3-8.png)
+
+9.
+
+![3-9](imgs/3-9.png)
+
+
+
 **How can you use Chrome's DevTools inspector to help you format or position elements?**
 
 The Chrome Inspector allows you to toggle existing CSS rules, add new rules, and preview any changes you make before you add the changes to your own CSS file.  It's especially helpful for positioning elements, as it allows you to see any changes you make in real time and use some trial-and-error to put the elements where you want.
