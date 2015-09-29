@@ -125,7 +125,7 @@ cartman()
 #
 # 5. Why did the interpreter give you this error?
 #
-# The function was not created to take arguments, but it is being called with a string for an argument.  It could be fixed by defining an argument, like this:
+# The method was not created to take arguments, but it is being called with a string for an argument.  It could be fixed by defining an argument, like this:
 #
 def cartmans_phrase(insult)
   puts "I'm not fat; I'm big-boned!"
@@ -155,11 +155,11 @@ cartmans_phrase('I hate Kyle')
 #
 # 4. Where is the error in the code?
 #
-# Like the last one, the error is either in line 138 or line 142, depending on whether or not you want the function to take arguments.
+# Like the last one, the error is either in line 138 or line 142, depending on whether or not you want the method to take arguments.
 #
 # 5. Why did the interpreter give you this error?
 #
-# The function was defined with an argument, but was not given an argument when it was called.  It could be fixed by adding an argument when it is called, like this:
+# The method was defined with an argument, but was not given an argument when it was called.  It could be fixed by adding an argument when it is called, like this:
 
 def cartman_says(offensive_message)
   puts offensive_message
@@ -189,11 +189,11 @@ cartman_says('I hate Kyle.')
 #
 # 4. Where is the error in the code?
 #
-# The error occurs when the function is called with only one argument instead of two.
+# The error occurs when the method is called with only one argument instead of two.
 #
 # 5. Why did the interpreter give you this error?
 #
-# The function was defined with two arguments, but only called with one.  It could be fixed by adding a name when the function is called.
+# The method was defined with two arguments, but only called with one.  It could be fixed by adding a name when the method is called.
 
 def cartmans_lie(lie, name)
   puts "#{lie}, #{name}!"
