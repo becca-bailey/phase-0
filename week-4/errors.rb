@@ -1,7 +1,8 @@
 # Analyze the Errors
 
-# I worked on this challenge [by myself, with: ].
-# I spent [#] hours on this challenge.
+# I worked on this challenge by myself.
+
+# I spent 1.2 hours on this challenge.
 
 # --- error -------------------------------------------------------
 
