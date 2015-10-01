@@ -84,6 +84,5 @@ end
  
 def sentence_maker(words)
 	words[0].capitalize!
-	words[words.length-1] = words[words.length-1]+"."
-	return words.join(" ")
+	return words.join(" ") + "."
 end

@@ -1,6 +1,6 @@
 # Factorial
 
-# I worked on this challenge with Lars Johnson
+# I worked on this challenge with Lars Johnson.
 
 
 # Your Solution Below
