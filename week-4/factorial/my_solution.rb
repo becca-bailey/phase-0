@@ -4,16 +4,16 @@
 
 
 # Your Solution Below
-def factorial(number)
-  # Your code goes here
+# def factorial(number)
+#   # Your code goes here
 
-result = 1
-for i in 1..number
-  result = result * i
-  i =+1
-end
-return result
-end
+# result = 1
+# for i in 1..number
+#   result = result * i
+#   i =+1
+# end
+# return result
+# end
 
 # factorial 5
 
@@ -26,3 +26,10 @@ end
 #   add 1 to counter
 # REPEAT
 # Return result
+
+# Refactored Code
+
+def factorial(number)
+	result = number * factorial(number-1)
+	return result
+end

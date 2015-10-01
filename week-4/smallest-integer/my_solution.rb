@@ -10,14 +10,25 @@
 #
 # If +list_of_nums+ is empty the method should return nil
 
+# Pseudocode
+
+# IF the list of numbers is an empty array
+	# RETURN nil
+# ELSE
+	# SET the counter to 0
+	# assume first that the first number in the array is the smallest.
+	# WHILE the counter is less than the number of items in the array
+		# Compare the current smallest number to the number at the counter's location in the array
+		# IF the current smallest number is greater than the number at the counter, change the smallest number to the new number.
+		# ADD one to the counter
+	# END
+	# RETURN the smallest number
+# END
+# END
+
 # Your Solution Below
 
 def smallest_integer(list_of_nums)
-
-
-if list_of_nums == []
-	nil
-else
 	i = 0
 	smallest = list_of_nums[0]
 	while i < list_of_nums.length
@@ -28,15 +39,14 @@ else
 	end
 	return smallest
 end
+
+
+# Refactored Code
+
+def smallest_integer(list_of_nums)
+	list_of_nums.sort!
+	return list_of_nums[0]
 end
 
-# smallest_integer([0])
 
-
-
-#Iterate through the array.  If a number is less than the other numbers in the array, return the number.  
-
-#For every number in the list
-	#IF it is less than the other numbers in the list
-		#Return that number
 
