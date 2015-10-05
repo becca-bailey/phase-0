@@ -27,18 +27,17 @@
 
 # 1. total initial solution
 
-# def total(numbers)
-# 	sum = 0
-# 	i = 0
-# 	while i < numbers.length do 
-# 		sum = sum + numbers[i]
-# 		i += 1
-# 	end
-# 	puts sum
-# 	return sum
-# end
+def total(numbers)
+	sum = 0
+	i = 0
+	while i < numbers.length do 
+		sum = sum + numbers[i]
+		i += 1
+	end
+	puts sum
+	return sum
+end
 
-# total([1,2,3])
 
 
 
@@ -66,19 +65,19 @@ end
 
 # 5. sentence_maker initial solution
 
-# sentence_maker=[]
-# def sentence_maker(words)
-# text = ""
-# words[0].capitalize!
-# words[words.length-1] = words[words.length-1]+"."
-# text = text + words[0]
-# for i in 1..words.length-1
-#   text = text + " " + words[i].to_s
-#   i += 1
-# end
-# puts text
-# return text
-# end
+sentence_maker=[]
+def sentence_maker(words)
+text = ""
+words[0].capitalize!
+words[words.length-1] = words[words.length-1]+"."
+text = text + words[0]
+for i in 1..words.length-1
+  text = text + " " + words[i].to_s
+  i += 1
+end
+puts text
+return text
+end
 
 # 6. sentence_rspemaker refactored solution
  

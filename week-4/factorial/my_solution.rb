@@ -4,16 +4,15 @@
 
 
 # Your Solution Below
-# def factorial(number)
-#   # Your code goes here
 
-# result = 1
-# for i in 1..number
-#   result = result * i
-#   i =+1
-# end
-# return result
-# end
+def factorial(number)
+	result = 1
+	for i in 1..number
+	  result = result * i
+	  i += 1
+	end
+	return result
+end
 
 # factorial 5
 
@@ -30,6 +29,5 @@
 # Refactored Code
 
 def factorial(number)
-	result = number * factorial(number-1)
-	return result
+	number == 0 ? 1 : number * factorial(number - 1)
 end
