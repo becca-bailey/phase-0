@@ -6,68 +6,33 @@
 =begin
 Pseudocode
 
-Create a hash
+CREATE an empty hash
 
 DEFINE method for adding an items
-  ask question for what item you would like to add
-    REQUEST INPUT
-    REQUEST QUATNTITYTY
-    insert input into hash as key/valuse pair
+  PRINT "What item would you like to add?" 
+  GET item
+  PRINT "How much would you like to buy?" 
+  GET quantity
+  ADD input to hash as key/value pair
+  PRINT confirmation message
   
 DEFINE method for remove item
-  ask question for what item to remove
-   Request input of item
-  remove key pair from the hash
+  PRINT "What item would you like to remove?" 
+  GET item
+  REMOVE key/value pair from hash
+  PRINT confirmation message
 
 DEFINE method to update quantaties
-REQUEST item 
-print item quantaty
-REQUEST number
-update number
+  PRINT "What item would you like to change?" 
+  GET item
+  PRINT current amount of item to console
+  PRINT "How much would you like to buy?
+  UPDATE quantity in hash
+  PRINT confirmation message
 
-Define print list
-print list
+DEFINE method to print list
+  PRINT each item on the list by item: quantity
 
-
-
-INITIAL CODE
-
-$grocery_list = Hash.new ()
-
-def add_item(grocery_item, item_amount)
-  puts "What item would you like to add?"
-  grocery_item="Ice Cream"
-  puts "How much would you like to buy?"
-  item_amount = 5000
-  $grocery_list[grocery_item] = item_amount
-end
-
-add_item("Ice Cream", 5000)
-p $grocery_list
-
-def remove_item(grocery_item)
-  $grocery_list.delete(grocery_item)
-end
-
-remove_item("Ice Cream")
-
-p $grocery_list
-
-def change_amount(grocery_item,item_amount)
-  $grocery_list[grocery_item] = item_amount
-end
-
-change_amount("Ice Cream",200)
-  
-p $grocery_list
-  
-def print_list
-  $grocery_list.each do |item, quantity|
-    puts "#{item}: #{quantity}"
-  end
-end
-
-print_list
 =end
 
 $grocery_list = Hash.new ()
@@ -103,27 +68,46 @@ def print_list
     puts "#{item}: #{quantity}"
   end
 end
-def a
-#   b = "quiet noises"
-  p b
-end
 
-def b
-  return "loud noises"
-end
-
-# a
 # add_item
 # add_item
 # add_item
 # add_item
 # remove_item
 # change_amount
-options = [:print_list, :add_item, :remove_item, :update_item]
 
-while true do
-  p options
-  choice = gets("select a number").chomp
-  Object.send(options[choice.to_i])
+=begin
+  
+What did you learn about pseudocode from working on this challenge?  
+
+I researched some common terms to use in non-language-specific pseudocode.  We ended up using words like print, get, and add, that can be used in multiple languages.
+
+What are the tradeoffs of using Arrays and Hashes for this challenge?
+
+We used a hash for this challenge, becuase it allows us to associate the item with the quantity as a key value pair.  It's simple to add and retreive information using this structure.  Using an array would be more complicated, because it would involve a workaround like sub-arrays for each item and quantity.
+
+What does a method return?
+
+If the return is not explicitly specified within the method, a method will return the reuslt of the last operation within the method.  For example, if the last operation was a boolean, the method will return true or false.  If the last operation was print or puts, it will return 'nil'.  
+
+What kind of things cn you pass into methods as arguments?
+
+An argument can be a string, a boolean, an equation, a number (float or integer), an array, or a hash.
+
+How can you pass information between methods?
+
+You can use the same information in a method by defining variables outside of the method.  I know you can use classes and inheritance to pass information between methods, but that's something we haven't learned very much about yet, and hope to understand better in coming weeks.
+
+What concepts were solidified in this challenge, and what concepts are still confusing?
+
+This was the first time my partner and I had really worked with hashes, so this challenge helped us to better understand adding, retrieving, and removing items from a hash.  I think I understood all the concepts necessary for this challenge, but it's still confusing how you would create a method for determining which of these methods to run.  For example, I would love to add a prompt to this program that asks the user whether they would like to add, remove, or change an item on the list, but when I researched this, I was confused by classes and the ways to call one method inside of another.
+  
 end
-# Object.send(:print_list)
+
+
+
+
+
+
+
+
