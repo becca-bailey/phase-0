@@ -78,23 +78,40 @@ acct_groups(copperheads, 4)
 	
 What was the most interesting and most difficult part of this challenge?
 
-I would say that the most interesting AND most difficult part of this challenge was taking what I envisioned on paper and turning it into working code.  The most difficult part along the way was figuring out what you can and cannot do in ruby.  For example, I originally envisioned craeating an empty array for each group with the group number as the array name, before discovering (hours later) that a hash works much better for what I was trying to do.  
+I would say that the most interesting AND most difficult part of this challenge was taking 
+what I envisioned on paper and turning it into working code.  The most difficult part along
+the way was figuring out what you can and cannot do in ruby.  For example, I originally 
+envisioned craeating an empty array for each group with the group number as the array name, 
+before discovering (hours later) that a hash works much better for what I was trying to do.  
 
 Do you feel you are improving in your ability to write pseudocode and break the problem down?
 
-Yes!  I actually didn't have a working computer for a couple days this week, and spent a lt of time figuring out the logic and writing the code on paper.  Besides for a couple of small things (like I mentioned above), my initial working solution wasn't far off from what I wrote down.  
+Yes!  I actually didn't have a working computer for a couple days this week, and spent a lot 
+of time figuring out the logic and writing the code on paper.  Besides for a couple of small 
+things (like I mentioned above), my initial working solution wasn't far off from what I 
+wrote down.  
 
 What was your approach for automating this task a good solution?  What could have made it even better?
 
-I first thought about how I would approach this task manually.  I would decide on the number of groups I needed, and then go through each name and put it in a group the same way you would deal a deck of cards - cycling through each group and then starting over until every name is in a group.  Though I know there's more I could do to simplify the code, I already made a lot of small improvements from my original vision, such as adding a 'minimum number in each group' variable to make the code more flexible, and shuffling the names to produce a different result each time.  
+I first thought about how I would approach this task manually.  I would decide on the number 
+of groups I needed, and then go through each name and put it in a group the same way you 
+would deal a deck of cards - cycling through each group and then starting over until every 
+name is in a group.  Though I know there's more I could do to simplify the code, I already 
+made a lot of small improvements from my original vision, such as adding a 'minimum number 
+in each group' variable to make the code more flexible, and shuffling the names to produce a 
+different result each time.  
 
 What data structure did you decide to store the accountability groups in and why?
 
-In the end, I decided to create a single hash, with the group number as the key and an array of names as the value.  I didn't know before this project that it was possible for a hash value to be an array, and I learned that through a lot of trial and error.  
+In the end, I decided to create a single hash, with the group number as the key and an array 
+of names as the value.  I didn't know before this project that it was possible for a hash 
+value to be an array, and I learned that through a lot of trial and error.  
 
 What did you learn in the process of refactoring your initial solution?  Did you learn new Ruby methods?
 
-Mostly, I learned the importnace of timeboxing.  There is ALWAYS more you can do or more you can add, but you have to decide when it's done.  I learned the shuffle method, and how to retrieve the index of an array value using the index method.  
+Mostly, I learned the importnace of timeboxing.  There is ALWAYS more you can do or more you 
+can add, but you have to decide when it's done.  I learned the shuffle method, and how to 
+retrieve the index of an array value using the index method.  
 	
 =end
 
