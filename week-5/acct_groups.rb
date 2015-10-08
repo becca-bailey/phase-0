@@ -39,16 +39,12 @@ def acct_groups(names_array, min_n)
 	no_of_groups = names_array.length / min_n 
 	groups = Hash.new
 	(1..no_of_groups).each { |n| groups["Group #{n}"] = [] }
-	i = 0
 	names_array.shuffle!.each do |name|
-		n = ((no_of_groups + i) % no_of_groups) + 1
+		n = ((no_of_groups + names_array.index(name)) % no_of_groups) + 1
 		groups["Group #{n}"] << name
-		i += 1
 	end
 	groups.each { |k, v| puts "#{k}: " + v.join(", ") }
 end
-
-
 
 
 
