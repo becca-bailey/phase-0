@@ -62,22 +62,31 @@ end
 
 What was your proecess for breaking the problem down?  What different approaches did you consider?  
 
-I have mostly kept the same approach--breaking down the number into an array and then working backwards to insert a comma in each place.  I made some mistakes along the way, such as counting by three instead of four, but that was easy to fix.
+I have mostly kept the same approach--breaking down the number into an array and then working 
+backwards to insert a comma in each place.  I made some mistakes along the way, such as counting by 
+three instead of four, but that was easy to fix.
 
 Was your pseudocode effective in helping you build a successful initial solution?  
 
-Yes!  I was surprised by how little my solution differed from the initial pseudocode.  I really saw how taking my time to process the steps of the pseucodoce made writing the actual code much quicker. 
+Yes!  I was surprised by how little my solution differed from the initial pseudocode.  I really saw 
+how taking my time to process the steps of the pseucodoce made writing the actual code much quicker. 
 
 What Ruby method(s) did you use when refactoring your solution?  What difficulties did you have implementing them?  Did they significantly change the way your code works?  fis so, how?
 
-I used the join method, which I avoided in the initial solution, but added in easily in the refactored solution.  I tried out the step method to iterate in increments, which took a bit of trial and error, but worked out well in the end.  The code works basically the same as it did initially.  
+I used the join method, which I avoided in the initial solution, but added in easily in the 
+refactored solution.  I tried out the step method to iterate in increments, which took a bit of trial 
+and error, but worked out well in the end.  The code works basically the same as it did initially.  
 
 How did you iterate through the data structure?  
 
-In my initial soluion, I used a couple different iteration methods, such as a while loop and the each method.  I set the while loop to iterate incrementally through the array, which I accomplished with the step method in the refactored solution.
+In my initial soluion, I used a couple different iteration methods, such as a while loop and the each 
+method.  I set the while loop to iterate incrementally through the array, which I accomplished with 
+the step method in the refactored solution.
 
 Do you feel your refactored solution is more readable than your initial solution?  Why?
 
-In the interest of time boxing, I made pretty minimal changes to my re-factored solution.  Though it is shorter and more efficient than the original, I don't think it's necessarily more readable than the original.  
+In the interest of time boxing, I made pretty minimal changes to my re-factored solution.  Though it 
+is shorter and more efficient than the original, I don't think it's necessarily more readable than 
+the original.  
 
 =end
