@@ -11,7 +11,11 @@
 # Steps:
 # Create a class called Die
 	# INITIALIZE the class, its arguments, and its variables
-	# 
+	# RAISE argument error if the number one or less.
+# DEFINE a method called sides
+	# RETURN number of sides
+# DEFINE a mthod called roll
+	# RETURN a randon integer between 1 and the number of sides
 
 
 # 1. Initial Solution
