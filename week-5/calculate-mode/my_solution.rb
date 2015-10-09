@@ -84,19 +84,25 @@ end
 
 Which data structure did you and your pair decide to implement and why?
 
-We decided to create an instance counter using a hash, becuase it allows us to set a key value pair and set the value equal to the number of times an array item occurred.
+We decided to create an instance counter using a hash, becuase it allows us to set a key value pair and set the 
+value equal to the number of times an array item occurred.
 
 Were you more successful breaking this problem down into implementable pseudocode than with the last pair?
 
-Not exactly.  While it was fairly simple to write the pseudocode, implementing it was more difficlut in this pairing session than it has been for me in the past.  
+Not exactly.  While it was fairly simple to write the pseudocode, implementing it was more difficlut in this pairing 
+session than it has been for me in the past.  
 
 What issues/successes did you run into when translating your pseudocode to code?
 
-We had some issues writing the code for this challenge, becuase our original code didn't work as expected, and it took some additional time to research a new solution.  Once we came up with a new solution, it took some time for both of us to get on the same page and fully understand what was going on in the code.
+We had some issues writing the code for this challenge, becuase our original code didn't work as expected, and it 
+took some additional time to research a new solution.  Once we came up with a new solution, it took some time for 
+both of us to get on the same page and fully understand what was going on in the code.
 
 What methods did you use to iterate through the content?  Did you find any good ones when you were refactoring?  Were they difficult to implement?  
 
-We primarily used the each method to iterate in both versions, though we switched out the while loop for a method in the final solution.  Though we found the values.max method early on in the process of researching this problem, we wanted to use simpler logic to arrive at the first soluton, which proved to be pretty complicated.  
+We primarily used the each method to iterate in both versions, though we switched out the while loop for a method in 
+the final solution.  Though we found the values.max method early on in the process of researching this problem, we 
+wanted to use simpler logic to arrive at the first soluton, which proved to be pretty complicated.  
 
 
 	
