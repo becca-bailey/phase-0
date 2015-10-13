@@ -94,3 +94,41 @@ end
 
 # The only trick I have for going through the Ruby Docs is liberal use of ctrl + f to find
 # key words that I thought would be related to methods I wanted to use.
+
+# Person 5
+def my_array_splitting_method(source)
+  int_array = []
+  misc_array = []
+  total_array = []
+  source.each do |obj|
+    if obj.is_a? Integer
+      int_array << obj
+    else
+      misc_array << obj
+    end
+  end
+  total_array.push(int_array).push(misc_array)
+  total_array
+end
+
+
+def my_hash_splitting_method(source, age)
+  criterion_array = []
+  noncriterion_array = []
+  full_array = []
+  source.each do |key, value|
+    if value <= age
+      criterion_array << [key, value]
+    else
+      noncriterion_array << [key, value]
+    end
+  end
+  full_array.push(criterion_array).push(noncriterion_array)
+end
+
+=begin
+# Release 1: Identify and describe the Ruby method you implemented. Teach your
+# accountability group how to use the methods.
+.each -Used to iterate thru the Array and Hash's key-value(s)
+.is_a? Integer  - Used to identify if object in array is an Integer
+.push Used to concat arrays to one another.
