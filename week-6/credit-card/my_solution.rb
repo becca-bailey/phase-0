@@ -1,13 +1,13 @@
 # Class Warfare, Validate a Credit Card Number
 
 
-# I worked on this challenge [by myself, with: ].
-# I spent [#] hours on this challenge.
+# I worked on this challenge with Daniel Woznicki.
+# I spent 1.25 hours on this challenge.
 
 # Pseudocode
 
 # Input: A 16-digit integer
-# Output: a boolean, true or false
+# Output: true or false
 # Steps:
 
 # UNLESS number is 16-digit integer
@@ -77,6 +77,7 @@
 
 
 # Refactored Solution
+
 class CreditCard
   def initialize(number)
     @number = number.to_s.split(//)
@@ -98,13 +99,50 @@ class CreditCard
       elt.is_a?(String) ? elt.to_i : elt
     end #map!
  
-    @sum = @number.reduce(&:+)
+    sum = @number.reduce(&:+)
 
-    @sum % 10 == 0 ? true : false
+    sum % 10 == 0 ? true : false
   end #check_card
 
 end
 
-
-
 # Reflection
+
+=begin
+  
+How difficult was pseudocoding this challenge? What do you think of your pseudocoding style?
+
+It was fairly easy to pseudocode this challenge once we broke it down into small steps.  My pair was 
+able to outline the big steps, and as he did that, I thought more about the smaller steps we need to 
+include within those big steps.  Pseudocoding this challenge with a pair worked out well.
+
+What are the benefits of using a class for this challenge?
+
+A class allows you to divide up a more complex task into individual methods for that object.  Orginally, 
+my pair and I used several different methods, but combined them into one to simplify.
+
+How can you access coordinates in a nested array?
+
+You can use the index number of both the nested array and the item with in the array, for example array[
+0][1].  You can also apply a method just to nested arrays by using a method like is_a?(Array).  
+
+What methods did you use to access and modify the array?
+
+We used thd map! method to modify the contents of the array, like when we needed to convert a string to 
+an integer or split a two-digit number.  We used the each_with_index method to modify a number only if 
+it is at a certain index.  
+
+How did you determine what should be an instance variable versus a local variable?
+
+A variable like the one we used for our array needs to be a instance variable, so it can be transferred 
+between methods in a class.  However, the variable we set for the sum could be a local variable, as it 
+only needed to be used inside one method.  
+
+What do you feel is most improved in your refactored solution?
+
+I think the re-factored solution is more readable, because we were able to make it much shorter.  We 
+also changed some variable names to make them more descriptive.  While I know there is probably a more 
+elegant solution, I think my pair and I solved the problem in a fairly efficient way in the time we 
+had.  
+  
+end
