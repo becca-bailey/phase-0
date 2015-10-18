@@ -49,16 +49,13 @@
 # Refactored Solution
 
 class Die
+  attr_reader :sides
   def initialize(labels)
     @labels = labels
     @sides = @labels.length
     if @sides < 1
       raise ArgumentError.new("Please enter at least one string.")
     end
-  end
-
-  def sides
-    return @sides
   end
 
   def roll
