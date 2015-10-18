@@ -44,7 +44,7 @@ class GuessingGame
   end
 
   def solved?
-  	@guess == @answer? true : false
+  	@guess == @answer
   end
 end
 
