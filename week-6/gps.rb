@@ -61,3 +61,21 @@ p serving_size_calc("THIS IS AN ERROR", 5)
 
 #  Reflection
 
+=begin
+  
+What did you learn about making code readable by working on this challenge?
+
+Code is much less readable when it uses the wrong methods.  For example, it was confusing to have an error counter and a values_at? method just to match input to hash keys.  It's also difficult when you don't fully understand the purpose for a variable.  My pair and I were confused at times about exactly what the order_quantity and serving_size_mod stood for.
+
+Did you learn any new methods? What did you learn about them?
+
+We didn't learn any new methods, though we had to learn more about values_at in order to understand its purpose in the original code.  We also had to review the syntax for include? and any? (which we originally used instead of include).
+
+What did you learn about accessing data in hashes? 
+
+I learned that while there are multiple ways to access information, it's usually best to use the simplest possible method to make the code easier to understand.  
+
+What concepts were solidified when working through this challenge?
+  
+end
+
