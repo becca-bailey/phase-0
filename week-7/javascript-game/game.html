@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+
+        <!-- Add your site or application content here -->
+        <h1>Yahtzee!</h1>
+
+
+
+        <script>
+
+        var game = {
+			rollArray: [],
+			keepArray: [],
+			continue: true,
+			roll: function() {
+				for (i = 0; i < 5 - game.keepArray.length; i++) {
+					game.rollArray[i] = Math.floor((Math.random() * 6) + 1);
+				}
+				document.write("<br>You rolled: " + game.rollArray);
+			},
+			keep: function() {
+				var keepValue = prompt("Which number would you like to keep?");
+				for (i = 0; i < game.rollArray.length; i++) {
+					if (parseInt(keepValue) === game.rollArray[i]) {
+						game.keepArray.push(parseInt(keepValue));
+						game.rollArray.splice(i, 1);
+						break;
+					}
+				}
+				game.keepArray.sort();
+				document.write("<br>You are keeping: " + game.keepArray.sort());
+				document.write("<br>You still have: " + game.rollArray);
+			},
+			keepAll: function() {
+				for (i = 0; i < game.rollArray.length; i++) {
+					game.keepArray.push(game.rollArray[i]);
+				}
+				game.keepArray.sort();
+				document.write("<br>You have: " + game.keepArray.sort());
+			},
+			menu: function() {
+
+				var userChoice = prompt("Enter k to keep a number, r to roll again, or q to quit.");
+				if (userChoice === "k") {
+					game.keep();
+					game.menu();
+				} else if (userChoice === "r") {
+					game.roll();
+				} else if (userChoice === "q") {
+					game.continue = false;
+				} else {
+					document.write("<br>Invalid input.  Please try again");
+					game.menu();
+				}
+			},
+			play: function() {
+				game.roll();
+				game.menu();
+				game.menu();
+				game.keepAll();
+			}
+		}
+
+		var check = {
+			yahtzee: function() {
+				var count = 0;
+				for(i = 0; i < 4; i++ ) {
+					if (game.keepArray[i] === game.keepArray[i+1]) {
+						count++;
+					}
+				}
+				if (count === 4) {
+					document.write("<br>Yahtzee!");
+					return true;
+				}
+			},
+			largeStraight: function() {
+				var count = 0;
+				for(i = 0; i < 4; i++ ) {
+					if (game.keepArray[i] + 1 === game.keepArray[i+1]) {
+						count++;
+					}
+				}
+				if (count === 4) {
+					document.write("<br>Large straight!");
+					return true;
+				}
+			},
+			smallStraight: function() {
+				var ssArray = [];
+				for(i = 0; i < 4; i++ ) {
+					if (game.keepArray[i] !== game.keepArray[i+1]) {
+						ssArray.push(game.keepArray[i]);
+					}
+				}
+				var count = 0;
+				for(i = 0; i < ssArray.length; i++) {
+					if (ssArray[i] + 1 === ssArray[i+1]) {
+						count++;
+					}
+				}
+				if (count >= 3) {
+					document.write("<br>Small straight!");
+					return true;
+				}
+			},
+			fullHouse: function() {
+				var counter = {};
+				for(var i = 0; i < 5; i++) {
+					var num = game.keepArray[i];
+					counter[num] = counter[num] ? counter[num] + 1 : 1;
+				}
+				var checkArray = [];
+				for (var n in counter) {
+				    checkArray.push(counter[n]);
+				}
+				if ((checkArray[0] === 3 && checkArray[1] === 2) || (checkArray[0] === 2 && checkArray[1] === 3)) {
+					document.write("<br>Full house!");
+				    return true;
+				}		
+			},
+			fourOfKind: function() {
+				var counter = {};
+				for(var i = 0; i < 5; i++) {
+					var num = game.keepArray[i];
+					counter[num] = counter[num] ? counter[num] + 1 : 1;
+				}
+				var checkArray = [];
+				for (var n in counter) {
+				    checkArray.push(counter[n]);
+				}
+				if (checkArray[0] >= 4 || checkArray[1] >= 4) {
+					document.write("<br>Four of a kind!");
+				    return true;
+				}		
+			},
+			checkAll: function() {
+				check.yahtzee();
+				check.largeStraight();
+				check.smallStraight();
+				check.fullHouse();
+				check.fourOfKind();
+			}
+		}
+
+		while (game.continue === true) {
+
+			game.play();
+			check.checkAll();
+			game.keepArray = [];
+
+		}
+        </script>
+    </body>
+</html>
