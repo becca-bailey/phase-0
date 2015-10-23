@@ -149,6 +149,9 @@ var game = {
 		case "q":
 			game.continue = false;
 			break
+		case "ka":
+			game.keepAll();
+			break
 		default:
 			textArea.innerHTML = "Invalid input.  Please try again. <br> You are keeping: " + game.keepArray.sort() + 
 							"<br>You still have: " + game.rollArray;
@@ -164,76 +167,72 @@ var game = {
 }
 
 var check = {
-	yahtzee: function() {
-		var count = 0;
-		for(i = 0; i < 4; i++ ) {
-			if (game.keepArray[i] === game.keepArray[i+1]) {
-				count++;
+	checkArray: [],
+	counter: function() {
+		var count = {};
+		for(var i = 0; i < 5; i++) {
+			var num = game.keepArray[i];
+			count[num] = count[num] ? count[num] + 1 : 1;
+		}
+		check.checkArray = [];
+		for (var n in count) {
+		    check.checkArray.push(count[n]);
+		}
+
+	},
+	smallStraight: function() {
+		var ssArray = [];
+		for(var i = 0; i < 5; i++ ) {
+			if (game.keepArray[i] === game.keepArray[i-1] + 1) {
+				ssArray.push(game.keepArray[i]);
 			}
 		}
-		if (count === 4) {
-			textArea.innerHTML ="<h1>Yahtzee!</h1>";
-			return true;
+		if (ssArray.length === 3) {
+			textArea.innerHTML = game.keepArray + "<br><h2>Small straight!</h2>";
 		}
+		// var count = 0;
+		// for(i = 0; i < ssArray.length; i++) {
+		// 	if (ssArray[i] + 1 === ssArray[i+1]) {
+		// 		count++;
+		// 	}
+		// }
+		// if (count === 2) {
+		// 	textArea.innerHTML = game.keepArray + "<br><h2>Small straight!</h2>";
+		// }
 	},
 	largeStraight: function() {
 		var count = 0;
-		for(i = 0; i < 4; i++ ) {
-			if (game.keepArray[i] + 1 === game.keepArray[i+1]) {
+		for(var i = 0; i < 5; i++ ) {
+			if (game.keepArray[i] === game.keepArray[i-1] + 1) {
 				count++;
 			}
 		}
 		if (count === 4) {
 			textArea.innerHTML ="<h2>Large straight!</h2>";
-			return true;
 		}
 	},
-	smallStraight: function() {
-		var ssArray = [];
-		for(i = 0; i < 4; i++ ) {
-			if (game.keepArray[i] !== game.keepArray[i+1]) {
-				ssArray.push(game.keepArray[i]);
-			}
-		}
-		var count = 0;
-		for(i = 0; i < ssArray.length; i++) {
-			if (ssArray[i] + 1 === ssArray[i+1]) {
-				count++;
-			}
-		}
-		if (count >= 3) {
-			textArea.innerHTML ="<h2>Small straight!</h2>";
-			return true;
+	yahtzee: function() {
+		check.counter();
+		if (check.checkArray[0] === 5) {
+			textArea.innerHTML = game.keepArray + "<br><h1>Yahtzee!</h1>";
 		}
 	},
 	fullHouse: function() {
-		var counter = {};
-		for(var i = 0; i < 5; i++) {
-			var num = game.keepArray[i];
-			counter[num] = counter[num] ? counter[num] + 1 : 1;
-		}
-		var checkArray = [];
-		for (var n in counter) {
-		    checkArray.push(counter[n]);
-		}
-		if ((checkArray[0] === 3 && checkArray[1] === 2) || (checkArray[0] === 2 && checkArray[1] === 3)) {
-			textArea.innerHTML ="<h2>Full house!</h2>";
-		    return true;
+		check.counter();
+		if ((check.checkArray[0] === 3 && check.checkArray[1] === 2) || (check.checkArray[0] === 2 && check.checkArray[1] === 3)) {
+			textArea.innerHTML = game.keepArray + "<br><h2>Full house!</h2>";
 		}		
 	},
 	fourOfKind: function() {
-		var counter = {};
-		for(var i = 0; i < 5; i++) {
-			var num = game.keepArray[i];
-			counter[num] = counter[num] ? counter[num] + 1 : 1;
-		}
-		var checkArray = [];
-		for (var n in counter) {
-		    checkArray.push(counter[n]);
-		}
-		if (checkArray[0] >= 4 || checkArray[1] >= 4) {
-			textArea.innerHTML ="<h2>Four of a kind!</h2>";
-		    return true;
+		check.counter();
+		if (check.checkArray[0] === 4 || check.checkArray[1] === 4) {
+			textArea.innerHTML = game.keepArray + "<br><h2>Four of a kind!</h2>";
+		}		
+	},
+	threeOfKind: function () {
+		check.counter();
+		if (check.checkArray[0] == 3 || check.checkArray[1] === 3 || check.checkArray[2] === 3) {
+			textArea.innerHTML = game.keepArray + "<br><h2>Four of a kind!</h2>";
 		}		
 	},
 	checkAll: function() {

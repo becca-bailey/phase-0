@@ -10,13 +10,17 @@
 
 // Warm Up
 
+
+
+// Bulk Up
+
 function Athlete(name, event) {
   this.name = name,
   this.event = event
 }
 
 var sarah = new Athlete("Sarah Hughes", "Ladies' Singles");
-var michael = new Athlete("Michael Jordan", "Basketball");
+var michael = new Athlete("Michael Phelps", "Swimming");
 
 var newArray = [sarah, michael];
 
@@ -27,10 +31,6 @@ function Winner(athleteArray) {
 }
 
 Winner(newArray);
-
-
-// Bulk Up
-
 
 
 // Jumble your words
@@ -55,17 +55,13 @@ stringReverse("Jumble your words!")
 // })
 // console.log(newArray);
 
-
+// Re-factored Solution
 
 function checkEven(value, index) {
-  if (value % 2 === 0) {
-    return true;
-  }
+  return value % 2 === 0 ? true : false;
 }
 var numbers = [1,2,3,4,5];
 console.log(numbers.filter(checkEven));
-  
-
 
 
 
