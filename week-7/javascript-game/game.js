@@ -253,13 +253,13 @@ Game loop
 var playButton = document.getElementById("play-button");
 var textArea = document.getElementById("text-area");
 playButton.onclick = function() {
-	while (game.continue === true) {
-		textArea.innerHTML = "";
-		game.keepArray = [];
-		game.play();
-		check.checkAll();
-		break;
-	}	
+	textArea.innerHTML = "";
+	game.keepArray = [];
+	game.roll();
+	game.menu();
+	game.menu();
+	game.keepAll();
+	check.checkAll();
 }
 
 var game = {
@@ -308,6 +308,7 @@ var game = {
 	menu: function() {
 
 		var userChoice = prompt("Enter k to keep a number, r to roll again, rm to remove a number, or q to quit.");
+		userChoice = userChoice.toLowerCase();
 		switch(userChoice) {
 		case "k":
 			game.keep();
@@ -320,20 +321,15 @@ var game = {
 			game.removeNum();
 			break;
 		case "q":
-			game.continue = false;
+			invalid;
 			break;
 		default:
 			textArea.innerHTML = "Invalid input.  Please try again. <br> You are keeping: " + game.keepArray.sort() + 
 							"<br>You still have: " + game.rollArray;
 			game.menu();
 		}
-	},
-	play: function() {
-		game.roll();
-		game.menu();
-		game.menu();
-		game.keepAll();
 	}
+
 }
 
 var check = {
