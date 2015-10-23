@@ -77,54 +77,173 @@ PRINT score
 	
 */
 
+var playButton = document.getElementById("play-button");
+var textArea = document.getElementById("text-area");
+playButton.onclick = function() {
+	while (game.continue === true) {
+		textArea.innerHTML = "";
+		game.keepArray = [];
+		game.play();
+		check.checkAll();
+		break;
+	}	
+}
+
 var game = {
 	rollArray: [],
 	keepArray: [],
+	continue: true,
 	roll: function() {
 		for (i = 0; i < 5 - game.keepArray.length; i++) {
 			game.rollArray[i] = Math.floor((Math.random() * 6) + 1);
 		}
-		console.log(game.rollArray);
-		yahtzee.play.rollCounter++;
+		textArea.innerHTML = "You rolled: " + game.rollArray + "<br> You are keeping: " + game.keepArray;
 	},
 	keep: function() {
-		var n = parseInt(prompt("Which number would you like to keep?"));
+		var keepValue = prompt("Which number would you like to keep?");
 		for (i = 0; i < game.rollArray.length; i++) {
-			if (n === game.rollArray[i]) {
-				game.keepArray.push(n);
+			if (parseInt(keepValue) === game.rollArray[i]) {
+				game.keepArray.push(parseInt(keepValue));
 				game.rollArray.splice(i, 1);
 				break;
 			}
 		}
-		console.log(game.keepArray);
-		console.log(game.rollArray);
+		game.keepArray.sort();
+		textArea.innerHTML ="You are keeping: " + game.keepArray.sort() + 
+							"<br>You still have: " + game.rollArray;
+	},
+	removeNum: function() {
+		var rmValue = prompt("Which number would you like to remove?");
+		for (i = 0; i< game.keepArray.length; i++) {
+			if (parseInt(rmValue) === game.keepArray[i]) {
+				game.rollArray.push(parseInt(rmValue));
+				game.keepArray.splice(i, 1);
+				break;
+			}
+		}
+		game.keepArray.sort();
+		textArea.innerHTML ="You are keeping: " + game.keepArray.sort() + 
+							"<br>You still have: " + game.rollArray;
+	},
+	keepAll: function() {
+		for (i = 0; i < game.rollArray.length; i++) {
+			game.keepArray.push(game.rollArray[i]);
+		}
+		game.keepArray.sort();
+		textArea.innerHTML ="You have: " + game.keepArray.sort();
 	},
 	menu: function() {
-		var userChoice = prompt("What would you like to do?  Enter k to keep a number, or r to roll again.");
-		if (userChoice === "k") {
+
+		var userChoice = prompt("Enter k to keep a number, r to roll again, rm to remove a number, or q to quit.");
+		switch(userChoice) {
+		case "k":
 			game.keep();
 			game.menu();
-		} else if (userChoice === "r") {
+			break
+		case "r": 
 			game.roll();
-		} else {
-			console.log("Invalid input.  Please try again");
+			break
+		case "rm":
+			game.removeNum();
+			break
+		case "q":
+			game.continue = false;
+			break
+		default:
+			textArea.innerHTML = "Invalid input.  Please try again. <br> You are keeping: " + game.keepArray.sort() + 
+							"<br>You still have: " + game.rollArray;
+			game.menu();
 		}
-	}
-}
-
-var yahtzee = function() {
-	gameCounter: 0,
+	},
 	play: function() {
-		rollCounter: 0,
-		while(yahtzee.gameCounter <= 12) {
-			game.roll;
-			game.menu;
-			yahtzee.gameCounter++;
-		}
+		game.roll();
+		game.menu();
+		game.menu();
+		game.keepAll();
 	}
 }
 
-yahtzee();
+var check = {
+	yahtzee: function() {
+		var count = 0;
+		for(i = 0; i < 4; i++ ) {
+			if (game.keepArray[i] === game.keepArray[i+1]) {
+				count++;
+			}
+		}
+		if (count === 4) {
+			textArea.innerHTML ="<h1>Yahtzee!</h1>";
+			return true;
+		}
+	},
+	largeStraight: function() {
+		var count = 0;
+		for(i = 0; i < 4; i++ ) {
+			if (game.keepArray[i] + 1 === game.keepArray[i+1]) {
+				count++;
+			}
+		}
+		if (count === 4) {
+			textArea.innerHTML ="<h2>Large straight!</h2>";
+			return true;
+		}
+	},
+	smallStraight: function() {
+		var ssArray = [];
+		for(i = 0; i < 4; i++ ) {
+			if (game.keepArray[i] !== game.keepArray[i+1]) {
+				ssArray.push(game.keepArray[i]);
+			}
+		}
+		var count = 0;
+		for(i = 0; i < ssArray.length; i++) {
+			if (ssArray[i] + 1 === ssArray[i+1]) {
+				count++;
+			}
+		}
+		if (count >= 3) {
+			textArea.innerHTML ="<h2>Small straight!</h2>";
+			return true;
+		}
+	},
+	fullHouse: function() {
+		var counter = {};
+		for(var i = 0; i < 5; i++) {
+			var num = game.keepArray[i];
+			counter[num] = counter[num] ? counter[num] + 1 : 1;
+		}
+		var checkArray = [];
+		for (var n in counter) {
+		    checkArray.push(counter[n]);
+		}
+		if ((checkArray[0] === 3 && checkArray[1] === 2) || (checkArray[0] === 2 && checkArray[1] === 3)) {
+			textArea.innerHTML ="<h2>Full house!</h2>";
+		    return true;
+		}		
+	},
+	fourOfKind: function() {
+		var counter = {};
+		for(var i = 0; i < 5; i++) {
+			var num = game.keepArray[i];
+			counter[num] = counter[num] ? counter[num] + 1 : 1;
+		}
+		var checkArray = [];
+		for (var n in counter) {
+		    checkArray.push(counter[n]);
+		}
+		if (checkArray[0] >= 4 || checkArray[1] >= 4) {
+			textArea.innerHTML ="<h2>Four of a kind!</h2>";
+		    return true;
+		}		
+	},
+	checkAll: function() {
+		check.yahtzee();
+		check.largeStraight();
+		check.smallStraight();
+		check.fullHouse();
+		check.fourOfKind();
+	}
+}
 
 
 

@@ -1,0 +1,36 @@
+h1 {
+	color: red;
+	font-family: "League Script";
+	text-align: center;
+	font-size: 4em;
+}
+
+h2 {
+	text-align: center;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+	font-size: 20px;
+	margin: 0 auto;
+}
+
+#text-area {
+	width: 800px;
+	background-color: #f8f8f8;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+button {
+	width: 200px;
+	height: 50px;
+	border: 2px solid red;
+	color: red;
+	background-color: white;
+	border-radius: 10px;
+	margin-left: 42%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+
+}
