@@ -347,8 +347,9 @@ var check = {
 		check.checkArray = [];
 		for (var n in count) {
 		    check.checkArray.push(count[n]);
+		    check.checkArray = check.checkArray.sort().reverse();
+		    console.log(check.checkArray);
 		}
-
 	},
 	smallStraight: function() {
 		var ssArray = [];
@@ -380,20 +381,20 @@ var check = {
 	},
 	fullHouse: function() {
 		check.counter();
-		if ((check.checkArray[0] === 3 && check.checkArray[1] === 2) || (check.checkArray[0] === 2 && check.checkArray[1] === 3)) {
+		if (check.checkArray[0] === 3 && check.checkArray[1] === 2) {
 			textArea.innerHTML = game.keepArray + "<br><h2>Full house!</h2>";
 		}		
 	},
 	fourOfKind: function() {
 		check.counter();
-		if (check.checkArray[0] === 4 || check.checkArray[1] === 4) {
+		if (check.checkArray[0] === 4) {
 			textArea.innerHTML = game.keepArray + "<br><h2>Four of a kind!</h2>";
 		}		
 	},
 	threeOfKind: function () {
 		check.counter();
-		if (check.checkArray[0] == 3 || check.checkArray[1] === 3 || check.checkArray[2] === 3) {
-			textArea.innerHTML = game.keepArray + "<br><h2>Four of a kind!</h2>";
+		if (check.checkArray[0] == 3 && check.checkArray[1] !== 2 ) {
+			textArea.innerHTML = game.keepArray + "<br><h2>Three of a kind!</h2>";
 		}		
 	},
 	checkAll: function() {
