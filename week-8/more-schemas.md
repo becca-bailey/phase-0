@@ -18,10 +18,10 @@ You would use a one-to-one database in a situation where there is not a list of 
 
 A many-to-many database is a database which contains multiple lists of data which are connected to each other.  For example, you could have a list of restaurants and a list of menu items.  There are many restuarants and many items, and multiple restaurants could serve the same menu items.  
 
-## When would you use a many-to-many database? (Think generally, not in terms of the example you created).
+###When would you use a many-to-many database? (Think generally, not in terms of the example you created).
 
 In general, you use a many-to-many database when you are dealing with multiple lists of information that are linked to each other.
 
-##What is confusing about database schemas? What makes sense?
+###What is confusing about database schemas? What makes sense?
 
 I'm still figuring out when to use multiple tables, and when everything needs to be in the same table.  In the grocery lists schema, it was rather confusing that the actual list was on the join table, and the grocery_lists table only had general information about the lists.  I think it would help me to see the information visualized in actual table form with examples.
