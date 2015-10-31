@@ -202,10 +202,15 @@ end
 
 What concepts did you review or learn in this challenge?
 
-Though 
+I reviewed how to solve a challenge using pseudocode.  Once I decided to use a counter to solve this challenge, it was fairly simple to use the counter for each method.
 
 What is still confusing to you about Ruby?
+
+It would still be confusing to me to figure out how to build an entire bingo game, complete with a randomly generated board and a game loop.  I know how to build the pieces, but I'm still a little fuzzy on putting all the pieces together.  
+
 What are you going to study to get more prepared for Phase 1?
+
+Building more complex programs using classes and methods.
 
 =end
 
