@@ -1,0 +1,61 @@
+
+
+main {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	text-align: center;
+}
+
+#list_area {
+	float: left;
+	width: 50%;
+	background-color: #FDE3A7;
+	min-height: 500px;
+}
+
+#controls {
+	float: right;
+	width: 50%;
+	text-align: center;
+}
+
+h1, h2 {
+	font-family: 'Shadows Into Light Two';
+}
+
+h1 {
+	margin-bottom: 50px;
+}
+
+button {
+	color: white;
+	min-width: 200px;
+	background-color: #03C9A9;
+	font-family: Lato, sans-serif;
+	font-size: 1.2em;
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	text-transform: lowercase;
+	margin: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+select {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	font-size: 1.2em;
+	min-width: 200px;
+}
+
+ul li {
+	list-style: none;
+	font-family: 'Shadows Into Light Two';
+	font-size: 1.2em;
+	text-align: left;
+
+}
