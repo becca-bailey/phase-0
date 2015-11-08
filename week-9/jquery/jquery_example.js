@@ -1,7 +1,7 @@
 // U3.W9:JQuery
 
 
-// I worked on this challenge [by myself, with: Chris Savage].
+// I worked on this challenge with: Chris Savage.
 // This challenge took me 1.75 hours.
 
 $(document).ready(function(){
@@ -66,5 +66,7 @@ While it does not add functionality to pure JavaScript (since each jQuery functi
 What did you learn about the DOM while working on this challenge?
 
 We learned about selecting nodes based on their tag name.  For example, we selected the first h1 using the .first() method, though we also could give that node an ID and select it with the ID.  
+
+*/
 
 
